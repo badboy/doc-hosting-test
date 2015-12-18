@@ -12,4 +12,12 @@ before_script:
 
 script:
   - |
-      env | grep TRAVIS
+      env | grep TRAVIS &&
+      travis-cargo --only stable doc
+after_success:
+  - travis-cargo --only stable doc-upload
+
+env:
+  global:
+    - TRAVIS_CARGO_NIGHTLY_FEATURE=""
+    - secure: "euPQ5pApg0jn2XiBLQCIHRpxP9ExcNcV5iY02A49mAOcgFeo7JP27wdQpWSJbrDDatp2d5Et6JhU4syxg89g7MVcctHHNOH10t00OvJbW6uV+TJPPnTfYVWCC5gYi1sPfQGIl1DWEZQzL6yJQ9pS9ocBAcx+Mkh6gdP39lLDL3OSWD2/0VI0qSOwgDnJqbmAKPRLI7KmtLdRxwgEjZuE8HSFm+LYbUPEbpUaR5rQClvfMZeAxKvvrjIDWz3XEBBlzva75dAGCSiS1Uhj4TQBlqSaQCmwDTl0tZjimhOt3T73zwkEeER+NDXW0gPomsQti/u0FXvjK0skOgASVcYdWKyhFsJwuCUk5Gn0NbZtFrcsq5CQIt7kbXV0y6ZRYaIt3WUW6Nva67kyhcQ1/OlOj+6fEGSFc7f7FK2drYdsOmek5ANtg5VNzpZdLbBCHlB9S745wQP+ehLEAO9CsS9iSTkYafaaRAp0CQaVAo4f1TsyJjep30kUxgTm1yebsrBCSdnFpKouVUE2w1OYkNc8BwX+B+vJsobkApTSjserkjqQrn7A2xVdj/XOPks4Rg/1szKRhCIHJ1vGVKPqcXMH5f2t2d14HnvtO0Z+ffTej2IHdUcqRYViA+DffjdG42SS7NwBEOOZenLjD1dbbX+a3Jdv6FUuFDtKMjhX6Vyeizw="
