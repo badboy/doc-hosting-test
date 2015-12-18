@@ -1,3 +1,8 @@
-#[test]
-fn it_works() {
+//! foobar
+
+pub fn hello_world() -> &'static str {
+    "hello world"
 }
+
+#[test]
+fn it_works() {}
