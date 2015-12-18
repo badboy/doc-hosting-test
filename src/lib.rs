@@ -1,4 +1,4 @@
-//! foobar 2
+//! foobar 6
 
 pub fn hello_world() -> &'static str {
     "hello world"
