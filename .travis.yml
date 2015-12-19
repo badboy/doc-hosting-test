@@ -9,7 +9,7 @@ before_script:
   - |
       git remote set-branches origin 'gh-pages' &&
       git fetch origin gh-pages &&
-      pip install 'travis-cargo<0.2' --user &&
+      pip install 'git+https://github.com/badboy/travis-cargo/@versioned' --user &&
       export PATH=$HOME/.local/bin:$PATH
 
 script:
